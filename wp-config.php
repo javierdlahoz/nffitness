@@ -16,13 +16,13 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'pfitness');
+define('DB_NAME', 'nff');
 
 /** MySQL database username */
-define('DB_USER', 'pwordpress');
+define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'minina');
+define('DB_PASSWORD', 'root');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -42,14 +42,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'put your unique phrase here');
-define('SECURE_AUTH_KEY',  'put your unique phrase here');
-define('LOGGED_IN_KEY',    'put your unique phrase here');
-define('NONCE_KEY',        'put your unique phrase here');
-define('AUTH_SALT',        'put your unique phrase here');
-define('SECURE_AUTH_SALT', 'put your unique phrase here');
-define('LOGGED_IN_SALT',   'put your unique phrase here');
-define('NONCE_SALT',       'put your unique phrase here');
+define('AUTH_KEY',         'dtwRF@C.e*ZNehMjzWEBkM1+?Z|`MWJoTX6h39ek2=d!1aRYEUWWv/{syHwxfNnx');
+define('SECURE_AUTH_KEY',  '0]tBT%kP.{&*(c+Hvdmv/fsb3W2Oix7Xdvm(B=|+?fqCriZo;x0PkL4? -+3WM4e');
+define('LOGGED_IN_KEY',    '.+x29ZSDm9K{FuJ/ZE&P.2ZeriaA{+kIzWWZ=AzHH]QJ%4SaJH#w7(m{Jk<``d+}');
+define('NONCE_KEY',        '6,2ApRtp|u-/[ye?OoUrK?Q-,AB6G_G7M@+wZ26~[Av,M*/uP0^x,H7^ge*{iW?^');
+define('AUTH_SALT',        '{h?b7g|bZp7F9UR:5gUQ#`+A)!IaWRy#.w-I29E~Lz:}kA(56>^sCHv5%8#AUA5c');
+define('SECURE_AUTH_SALT', '>HJg!uSQCJE7:f/4kO8pFQ8CNHa656Rgd&Wn! 48&dHQj5l!9~p_NaGEQ=594SnP');
+define('LOGGED_IN_SALT',   'V#?<;g:,6nrT*U+;qT>u#M`FwgYHCOV-wS:!ed AlxE`Bi=Wggk/bu*zcgv8@EGP');
+define('NONCE_SALT',       'fOBVTC;1dT:/b1~Oo7~-n/^%I[tk}pQ!GcQ+;4T RstmG*e{hUA1SO^h1T@L&l 2');
 
 /**#@-*/
 
@@ -59,7 +59,7 @@ define('NONCE_SALT',       'put your unique phrase here');
  * You can have multiple installations in one database if you give each a unique
  * prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix  = 'wp_';
+$table_prefix  = 'nff_';
 
 /**
  * For developers: WordPress debugging mode.
