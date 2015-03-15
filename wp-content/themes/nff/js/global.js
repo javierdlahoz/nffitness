@@ -74,6 +74,7 @@
   }
 })( jQuery );
 
+
 function showItemsInSlideShow(i){
 	var itemCount = $(".item").length;
 	var itemToShow = $(".item")[i];
@@ -89,16 +90,32 @@ function showItemsInSlideShow(i){
 	}
 	setTimeout(function(){
 		showItemsInSlideShow(i);
-	}, 5000);
+	}, 10000);
 }
 
 $(window).resize(function(){
+	$('.slideshow').css("height", ($(window).height() - 0) + "px");
 	$('.item-to-show').resizeToParent();
-	$('.slideshow').css("height", ($(window).height() - 55) + "px");
 });
 
 $(document).ready(function(){
+	$('.slideshow').css("height", ($(window).height() - 0) + "px");
 	$('.item-to-show').resizeToParent();
-	$('.slideshow').css("height", ($(window).height() - 55) + "px");
-	showItemsInSlideShow(0);
+	
+	if($(".item").length > 1){
+		showItemsInSlideShow(0);
+	}
+	else{
+		$('.item-to-show').fadeIn(500);
+		$('.item-to-show').resizeToParent();
+	}
 });
+
+
+function showBlog(index){
+	$(".blog-list").removeClass("blog-active-li");
+	$("#blog_list_"+index).addClass("blog-active-li");
+	
+	$(".blog-content").removeClass("blog-active");
+	$("#blog_"+index).addClass("blog-active");
+}

@@ -9,6 +9,9 @@
  * @since Twenty Fifteen 1.0
  */
 
+require __DIR__.'/../../plugins/in_utils/config/module_loader.php';
+require __DIR__.'/background-helper.php';
+
 $pagesArgs = array(
     'posts_per_page'   => 10,
     'orderby'          => 'ID',
@@ -18,7 +21,7 @@ $pagesArgs = array(
     'suppress_filters' => true
 ); 
 $pages = get_posts($pagesArgs);
-
+$requestUrl = $_SERVER["REQUEST_URI"];
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
@@ -28,10 +31,6 @@ $pages = get_posts($pagesArgs);
 <?php wp_head(); ?>
 <link
 	href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.css"
-	rel="stylesheet">
-<link href="<?php echo get_template_directory_uri(); ?>/css/blog.css"
-rel="stylesheet">
-<link href="<?php echo get_template_directory_uri(); ?>/css/contact.css"
 	rel="stylesheet">
 <link href="<?php echo get_template_directory_uri(); ?>/css/index.css"
 	rel="stylesheet">
@@ -67,26 +66,32 @@ rel="stylesheet">
 					<div id="u75">
 						<div class="container">
                 			 <div class="logo-left">
-                			     <img src="<?php echo get_template_directory_uri(); ?>/images/logo1.png" >
+                			     <a href="/">
+                			         <img src="<?php echo get_template_directory_uri(); ?>/images/logo1.png" >
+                			     </a>
                 			</div>
                 			<div class="links-container">
                     			<p>
-                        			<a class="nonblock nontext pinned-colelem links-at-the-top" id="u93-4"
+                        			<a class="nonblock nontext pinned-colelem links-at-the-top
+                        			 <?php if(strpos($requestUrl, "service")) echo "link-active"; ?>" id="u93-4"
                         				href="/services">
                         				<!-- content -->
                         				SERVICES
                         			</a> 
-                        			<a class="nonblock nontext pinned-colelem links-at-the-top" id="u91-4"
+                        			<a class="nonblock nontext pinned-colelem links-at-the-top
+                        			<?php if(strpos($requestUrl, "blog")) echo "link-active"; ?>" id="u91-4"
                         				href="/blog">
                         				<!-- content -->
                         				BLOG
                         			</a> 
-                        			<a class="nonblock nontext anim_swing pinned-colelem links-at-the-top"
+                        			<a class="nonblock nontext anim_swing pinned-colelem links-at-the-top 
+                        			<?php if(strpos($requestUrl, "about")) echo "link-active"; ?>"
                         				id="u92-4" href="/about">
                         				<!-- content -->
                         				ABOUT
                         			</a> 
-                        			<a class="nonblock nontext pinned-colelem links-at-the-top" id="u89-4"
+                        			<a class="nonblock nontext pinned-colelem links-at-the-top
+                        			<?php if(strpos($requestUrl, "contact")) echo "link-active"; ?>" id="u89-4"
                         				href="/contact">
                         				<!-- content -->
                         				CONTACT
