@@ -1,4 +1,5 @@
 <?php
+use INUtils\Entity\PostEntity;
 /**
  * The template for displaying the header
  *
@@ -21,6 +22,8 @@ $pagesArgs = array(
     'suppress_filters' => true
 ); 
 $pages = get_posts($pagesArgs);
+$currentCost = new PostEntity(get_the_ID());
+
 $requestUrl = $_SERVER["REQUEST_URI"];
 ?>
 <!DOCTYPE html>
@@ -64,7 +67,8 @@ $requestUrl = $_SERVER["REQUEST_URI"];
 				<!-- group -->
 				<div class="browser_width" id="u75-bw">
 					<div id="u75">
-						<div class="container">
+					   <!-- for desktop -->
+						<div class="container" id="desktop-container">
                 			 <div class="logo-left">
                 			     <a href="/">
                 			         <img src="<?php echo get_template_directory_uri(); ?>/images/logo1.png" >
@@ -79,7 +83,8 @@ $requestUrl = $_SERVER["REQUEST_URI"];
                         				SERVICES
                         			</a> 
                         			<a class="nonblock nontext pinned-colelem links-at-the-top
-                        			<?php if(strpos($requestUrl, "blog")) echo "link-active"; ?>" id="u91-4"
+                        			<?php if((strpos($requestUrl, "blog") || $currentCost->getType() == "post")
+                        			    && ($requestUrl != "/")) echo "link-active"; ?>" id="u91-4"
                         				href="/blog">
                         				<!-- content -->
                         				BLOG
@@ -100,6 +105,43 @@ $requestUrl = $_SERVER["REQUEST_URI"];
                             </div>
                         </div>
 					</div>
+					
+					<!-- for mobile -->
+                    <div id="mobile-container">
+                        <span class="pull-right mobile-menu" onclick="showOrHideMenu()">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/menu.png">
+                            <p id="menu-text">MENU</p>
+                            <p id="close-text" style="display: none">CLOSE</p>
+                        </span>
+                    </div>
+                    
+                    <div class="mobile-menu-list" id="mobile-menu-list">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/logo3.png"
+                        onclick="window.location='/'">
+                        <ul>
+                            <li>
+                                <a href="/services">
+                                    SERVICES
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/blog">
+                                    BLOG
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/about">
+                                    ABOUT
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/contact">
+                                    CONTACT
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+					
 				</div>
 			</div>
 		</div>

@@ -1,6 +1,7 @@
 <?php 
 use INUtils\Entity\PostEntity;
 use INUtils\Service\PostService;
+use INUtils\Helper\TextHelper;
 get_header(); 
 $pageEntity = new PostEntity(get_the_ID());
 getBackgroundImage();
@@ -9,52 +10,39 @@ $blogs = PostService::getSingleton()->getPosts();
 
 ?>
 <div class="phi-container">
-    
-        <div class="container">
+    <center>
+    	<div class="phi-content blog-container">
+            <div class="title" style="margin-top: 0px; margin-bottom: 30px;">
+    			<p>
+    				BLOG
+    			</p>
+    			<hr class="title-bar">
+    		</div>
             <div class="row">
-                <div class="col-md-4" style="margin-bottom: 50px;">
-                    <div class="title white" style="margin-top: 0px">
-            			<p>
-            				BLOGS
-            			</p>
-            		</div>
-            		<hr class="title-bar">
-            		<center>
-                        <ul class="blog-list">
-                        <?php 
-                        $i=0;
-                        foreach($blogs as $blog): ?>
-                            <li class="<?php if($i==0) echo "blog-active-li"; ?> blog-list" 
-                            id="blog_list_<?php echo $i; ?>" onclick="showBlog(<?php echo $i; ?>);">
-                                <i class="glyphicon glyphicon-play"></i>
-                                <?php echo $blog->getTitle(); ?>
-                            </li>
-                        <?php 
-                        $i++;
-                        endforeach; ?>
-                        </ul>
-                    </center>
-                </div>
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <?php 
                     $i=0;
                     foreach($blogs as $blog): ?>
-                        <div class="blog-content <?php if($i==0) echo "blog-active"; ?>" id="blog_<?php echo $i; ?>">
+                        <div class="blog-content blog-active" id="blog_<?php echo $i; ?>">
                             <div class="subtitle">
                                 <?php echo $blog->getTitle(); ?><br>
                                 <small><?php echo $blog->getFormattedDate(); ?></small>
                             </div>
                             <hr class="title-bar blog-title-bar">
                             <p>
-                                <?php echo $blog->getContent(); ?>
+                                <?php echo TextHelper::cropText($blog->getContent(), 400); ?>
                             </p>
+                            <br>
+                            <div class="service-more">
+                                <a href="<?php echo $blog->getPermalink(); ?>">More</a>
+                            </div>
                         </div>
                     <?php 
                     $i++;
                     endforeach; ?>
                 </div>
             </div>
-        </div> 
-    </div>
+       </div>
+   </center>
 </div>
 <?php get_footer(); ?>

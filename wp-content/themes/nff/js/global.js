@@ -119,3 +119,18 @@ function showBlog(index){
 	$(".blog-content").removeClass("blog-active");
 	$("#blog_"+index).addClass("blog-active");
 }
+
+function showOrHideMenu(){
+	var isMenuVisible = $("#mobile-menu-list").is(":visible"); 
+	console.log(isMenuVisible);
+	if(isMenuVisible === false){
+		$("#mobile-menu-list").show('slide', {direction: 'right'}, 400);
+		$("#menu-text").hide();
+		$("#close-text").show();
+	}
+	else{
+		$("#mobile-menu-list").hide('slide', {direction: 'right'}, 200);
+		$("#menu-text").show();
+		$("#close-text").hide();
+	}
+}

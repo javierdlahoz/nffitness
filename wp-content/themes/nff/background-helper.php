@@ -5,10 +5,16 @@ use INUtils\Service\PostService;
 function getBackgroundImage(){
     $pageEntity = new PostEntity(get_the_ID());
     $bkgroundImage = $pageEntity->getImage();
-    $imageSize = getimagesize($bkgroundImage);
-    if($imageSize[0] < 480){
+    if(!empty($bkgroundImage)){
+        $imageSize = getimagesize($bkgroundImage);
+        if($imageSize[0] < 480){
+            $bkgroundImage = "";
+        }    
+    }
+    else{
         $bkgroundImage = "";
     }
+    
     $blogs = PostService::getSingleton()->getPosts();
     ?>
     <div class="image-filter">

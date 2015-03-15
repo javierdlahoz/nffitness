@@ -14,7 +14,7 @@ getBackgroundImage();
     		</p>
     	</div>
     	<hr class="title-bar">
-    	<div class="phi-content">
+    	<div class="phi-content" style="text-align: justify">
     	   <p>
     	       <?php echo $pageEntity->getContent(); ?>
     	   </p>
