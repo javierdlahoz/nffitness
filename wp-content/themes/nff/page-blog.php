@@ -33,9 +33,11 @@ $blogs = PostService::getSingleton()->getPosts();
                                 <?php echo TextHelper::cropText($blog->getContent(), 400); ?>
                             </p>
                             <br>
+                            <?php if(strlen($blog->getContent()) > 400): ?>
                             <div class="service-more">
                                 <a href="<?php echo $blog->getPermalink(); ?>">More</a>
                             </div>
+                            <?php endif; ?>
                         </div>
                     <?php 
                     $i++;

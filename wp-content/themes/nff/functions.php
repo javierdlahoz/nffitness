@@ -30,3 +30,5 @@
  *
  * @since Twenty Fifteen 1.0
  */
+ 
+add_theme_support( 'post-thumbnails' );

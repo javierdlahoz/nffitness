@@ -77,17 +77,17 @@ $requestUrl = $_SERVER["REQUEST_URI"];
                 			<div class="links-container">
                     			<p>
                         			<a class="nonblock nontext pinned-colelem links-at-the-top
-                        			 <?php if(strpos($requestUrl, "service")) echo "link-active"; ?>" id="u93-4"
-                        				href="/services">
-                        				<!-- content -->
-                        				SERVICES
-                        			</a> 
-                        			<a class="nonblock nontext pinned-colelem links-at-the-top
-                        			<?php if((strpos($requestUrl, "blog") || $currentCost->getType() == "post")
-                        			    && ($requestUrl != "/")) echo "link-active"; ?>" id="u91-4"
+                        			 <?php if((strpos($requestUrl, "blog") || $currentCost->getType() == "post")
+                        			    && ($requestUrl != "/")) echo "link-active"; ?>" id="u93-4"
                         				href="/blog">
                         				<!-- content -->
                         				BLOG
+                        			</a> 
+                        			<a class="nonblock nontext pinned-colelem links-at-the-top
+                        			<?php if(strpos($requestUrl, "service")) echo "link-active"; ?>" id="u91-4"
+                        				href="/services">
+                        				<!-- content -->
+                        				SERVICES
                         			</a> 
                         			<a class="nonblock nontext anim_swing pinned-colelem links-at-the-top 
                         			<?php if(strpos($requestUrl, "about")) echo "link-active"; ?>"

@@ -154,9 +154,7 @@
 	background-color: transparent;
 	color: #FFFFFF;
 	line-height: 13px;
-	font-size: 11px;
 	text-align: center;
-	font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
 	position: fixed;
 	top: 18px;
 	left: 50%;
@@ -180,9 +178,7 @@
 	background-color: transparent;
 	color: #FFFFFF;
 	line-height: 13px;
-	font-size: 11px;
 	text-align: center;
-	font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
 	position: fixed;
 	top: 17px;
 	left: 50%;
@@ -207,9 +203,7 @@
 	background-color: transparent;
 	color: #FFFFFF;
 	line-height: 13px;
-	font-size: 11px;
 	text-align: center;
-	font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
 	position: fixed;
 	top: 17px;
 	left: 50%;
@@ -233,9 +227,7 @@
 	background-color: transparent;
 	color: #FFFFFF;
 	line-height: 13px;
-	font-size: 11px;
 	text-align: center;
-	font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
 	position: fixed;
 	top: 17px;
 	left: 50%;
@@ -554,6 +546,8 @@ body
 	position: relative;
 	top: -35px;
 	text-align: right;
+	font-family: roboto;
+  	font-size: 15px;
 }
 
 .logo-left{

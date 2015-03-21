@@ -16,12 +16,12 @@ get_header();
     		<div class="title">
     			<!-- content -->
     			<p>
-    				PHILO<br />SOPHY
+    				PHILOSOPHY
     			</p>
     		</div>
     		<div class="slogan">
     			<!-- content -->
-    			<p>Inspire.Train.Nourish.</p>
+    			<p>Inspire.Train.Nourish.Recover</p>
     		</div>
     		<hr class="title-bar">
     		<!-- rasterized frame -->

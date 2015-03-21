@@ -25,9 +25,11 @@ $services = $postService->getPosts();
     	               <div class="service-content">
     	                   <p><?php echo TextHelper::cropText($service->getContent(), 300); ?></p>
     	               </div>
+    	               <?php if(strlen($service->getContent()) > 300): ?>
     	               <div class="service-more">
     	                   <a href="<?php echo $service->getPermalink(); ?>">More</a>
     	               </div>
+    	               <?php endif; ?>
     	           </div>
     	       <?php endforeach; ?>
     	   </div>

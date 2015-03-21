@@ -8,10 +8,12 @@ getBackgroundImage();
 
 <div class="phi-container">
    <center>
-        <div class="title">
-    		<p>
-    			<?php echo strtoupper($pageEntity->getTitle()); ?>
-    		</p>
+        <div class="phi-content">
+            <div class="title blog-container">
+        		<p>
+        			<?php echo strtoupper($pageEntity->getTitle()); ?>
+        		</p>
+        	</div>
     	</div>
     	<hr class="title-bar">
     	<div class="phi-content" style="text-align: justify">
